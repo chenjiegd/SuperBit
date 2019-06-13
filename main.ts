@@ -68,7 +68,7 @@ namespace SuperBit {
     }
 
 
-
+    //步进电机
     export enum enSteppers {
         B1 = 0x1,
         B2 = 0x2
@@ -99,6 +99,7 @@ namespace SuperBit {
         T5B0 = 1800
     }
 
+    //舵机
     export enum enServo {
 
         S1 = 0,
@@ -110,6 +111,8 @@ namespace SuperBit {
         S7,
         S8
     }
+
+    //电机
     export enum enMotors {
         M1 = 8,
         M2 = 10,
@@ -117,6 +120,7 @@ namespace SuperBit {
         M4 = 14
     }
 
+    //I2C通信
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
         buf[0] = reg
@@ -173,6 +177,7 @@ namespace SuperBit {
         pins.i2cWriteBuffer(PCA9685_ADD, buf);
     }
 
+    //步进电机
     function setStepper(index: number, dir: boolean): void {
         if (index == enSteppers.B1) {
             if (dir) {
@@ -250,6 +255,7 @@ namespace SuperBit {
         }
     }
 
+    //SG90舵机
     //% blockId=SuperBit_Servo block="Servo(180°)|num %num|value %value"
     //% weight=97
     //% blockGap=10
@@ -264,6 +270,7 @@ namespace SuperBit {
 
     }
 
+    //270度积木舵机
     //% blockId=SuperBit_Servo2 block="Servo(270°)|num %num|value %value"
     //% weight=96
     //% blockGap=10
@@ -279,6 +286,7 @@ namespace SuperBit {
 
     }
 
+    //360度积木舵机
     //% blockId=SuperBit_Servo3 block="Servo(360°)|num %num|pos %pos|value %value"
     //% weight=96
     //% blockGap=10
@@ -303,10 +311,9 @@ namespace SuperBit {
             let pwm = us * 4096 / 20000;
             setPwm(num, 0, pwm);
         }
-
-
-
     }
+
+    //直流电机
     //% blockId=SuperBit_MotorRun block="Motor|%index|speed(-255~255) %speed"
     //% weight=93
     //% speed.min=-255 speed.max=255
@@ -348,7 +355,7 @@ namespace SuperBit {
     }
 
 
-
+    //双电机
     //% blockId=SuperBit_MotorRunDual block="Motor|%motor1|speed %speed1|%motor2|speed %speed2"
     //% weight=92
     //% blockGap=50
@@ -360,6 +367,7 @@ namespace SuperBit {
         MotorRun(motor2, speed2);
     }
 
+    //步进电机
     //% blockId=SuperBit_StepperDegree block="Stepper Motor(28BYJ-48) |%index|degree %degree"
     //% weight=90
     export function StepperDegree(index: enSteppers, degree: number): void {
@@ -372,6 +380,7 @@ namespace SuperBit {
         MotorStopAll()
     }
 
+    //停止所有电机
     //% blockId=SuperBit_MotorStopAll block="Motor Stop All"
     //% weight=91
     //% blockGap=50
