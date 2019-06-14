@@ -8,6 +8,7 @@ load dependency
 //export  在创建JavaScript模块时，export语句用于从模块中导出函数、对象或原始值，以便其他程序可以通过import语句使用它。
 //let 定义变量  类型与赋值的内容类型一致；变量定义时未赋值的话，变量的值可变成任何类型；
 //const 声明与 let 声明相似，它与 let 拥有相同的作用域规则，但 const 声明的是常量，常量不能被重新赋值。但是如果定义的常量是对象，对象里的属性值是可以被重新赋值的。
+//枚举（Enum）类型用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等
 
 //% color="#ECA40D" weight=20 icon="\uf085"
 namespace SuperBit {
@@ -46,7 +47,7 @@ namespace SuperBit {
     let initialized = false
     let yahStrip: neopixel.Strip;
 
-
+    //枚举（Enum）类型用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等
     export enum enMusic {
 
         dadadum = 0,
