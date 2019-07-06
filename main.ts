@@ -75,7 +75,7 @@ namespace SuperBit {
 
     //步进电机
     export enum enSteppers {
-        B1 = 0x1,
+        B1 = 0x1,0x80
         B2 = 0x2
     }
     export enum enPos {
