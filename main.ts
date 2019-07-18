@@ -10,7 +10,7 @@ load dependency
 //const 声明与 let 声明相似，它与 let 拥有相同的作用域规则，但 const 声明的是常量，常量不能被重新赋值。但是如果定义的常量是对象，对象里的属性值是可以被重新赋值的。
 //枚举（Enum）类型用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等
 
-//% color="#ECA40D" weight=20 icon="\uf085"
+//% color="#ECA40D" weight=20 icon="\uf1b9"
 namespace SuperBit {
 
     const PCA9685_ADD = 0x40
